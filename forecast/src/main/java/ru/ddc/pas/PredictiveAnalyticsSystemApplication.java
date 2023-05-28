@@ -28,7 +28,7 @@ public class PredictiveAnalyticsSystemApplication {
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("org.duckdb.DuckDBDriver");
         config.setMaximumPoolSize(10);
-        config.setMaxLifetime(3);
+        config.setMaxLifetime(1800000);
         config.setJdbcUrl("jdbc:duckdb:");
         return new HikariDataSource(config);
     }
