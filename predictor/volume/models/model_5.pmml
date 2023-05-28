@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="SkLearn2PMML package" version="0.92.2"/>
+		<Timestamp>2023-05-27T22:16:14Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension name="repr">PMMLPipeline(steps=[('classifier', DecisionTreeClassifier(criterion='entropy', max_depth=2, random_state=42))])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="Y_ЭКСГАУСТЕР А/М №4_ЭЛЕКТРОАППАРАТУРА ЭКСГ. №4" optype="categorical" dataType="double">
+			<Value value="0.0"/>
+			<Value value="1.0"/>
+			<Value value="2.0"/>
+		</DataField>
+		<DataField name="ЭКСГАУСТЕР 4. ТОК РОТОРА2" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ." optype="continuous" dataType="float"/>
+	</DataDictionary>
+	<TreeModel functionName="classification" algorithmName="sklearn.tree._classes.DecisionTreeClassifier" missingValueStrategy="nullPrediction">
+		<MiningSchema>
+			<MiningField name="Y_ЭКСГАУСТЕР А/М №4_ЭЛЕКТРОАППАРАТУРА ЭКСГ. №4" usageType="target"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ТОК РОТОРА2"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ."/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability(0.0)" optype="continuous" dataType="double" feature="probability" value="0.0"/>
+			<OutputField name="probability(1.0)" optype="continuous" dataType="double" feature="probability" value="1.0"/>
+			<OutputField name="probability(2.0)" optype="continuous" dataType="double" feature="probability" value="2.0"/>
+		</Output>
+		<LocalTransformations>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ТОК РОТОРА2)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ТОК РОТОРА2"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ.)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ."/>
+			</DerivedField>
+		</LocalTransformations>
+		<Node>
+			<True/>
+			<Node>
+				<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТОК РОТОРА2)" operator="lessOrEqual" value="251.5137481689453"/>
+				<Node score="0.0" recordCount="290907">
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТОК РОТОРА2)" operator="lessOrEqual" value="248.96700286865234"/>
+					<ScoreDistribution value="0.0" recordCount="262640"/>
+					<ScoreDistribution value="1.0" recordCount="0"/>
+					<ScoreDistribution value="2.0" recordCount="28267"/>
+				</Node>
+				<Node score="2.0" recordCount="335449">
+					<True/>
+					<ScoreDistribution value="0.0" recordCount="7894"/>
+					<ScoreDistribution value="1.0" recordCount="0"/>
+					<ScoreDistribution value="2.0" recordCount="327555"/>
+				</Node>
+			</Node>
+			<Node score="0.0" recordCount="3944369">
+				<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ.)" operator="lessOrEqual" value="2.575858473777771"/>
+				<ScoreDistribution value="0.0" recordCount="3936436"/>
+				<ScoreDistribution value="1.0" recordCount="54"/>
+				<ScoreDistribution value="2.0" recordCount="7879"/>
+			</Node>
+			<Node score="0.0" recordCount="443573">
+				<True/>
+				<ScoreDistribution value="0.0" recordCount="343957"/>
+				<ScoreDistribution value="1.0" recordCount="0"/>
+				<ScoreDistribution value="2.0" recordCount="99616"/>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>
