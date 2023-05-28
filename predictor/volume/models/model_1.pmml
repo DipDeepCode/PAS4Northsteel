@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="SkLearn2PMML package" version="0.92.2"/>
+		<Timestamp>2023-05-28T09:48:18Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension name="repr">PMMLPipeline(steps=[('classifier', DecisionTreeClassifier(criterion='entropy', max_depth=5))])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="Y_ЭКСГАУСТЕР А/М №4_ЭЛЕКТРОДВИГАТЕЛЬ ДСПУ-140-84-4 ЭКСГ. №4" optype="categorical" dataType="double">
+			<Value value="0.0"/>
+			<Value value="1.0"/>
+			<Value value="2.0"/>
+		</DataField>
+		<DataField name="ЭКСГАУСТЕР 4. ТОК РОТОРА 1" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ТОК РОТОРА2" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ДАВЛЕНИЕ МАСЛА В СИСТЕМЕ" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 1" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 2" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 4" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 1" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 2" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3. ПРОДОЛЬНАЯ." optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4" optype="continuous" dataType="float"/>
+		<DataField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ." optype="continuous" dataType="float"/>
+	</DataDictionary>
+	<TreeModel functionName="classification" algorithmName="sklearn.tree._classes.DecisionTreeClassifier" missingValueStrategy="nullPrediction">
+		<MiningSchema>
+			<MiningField name="Y_ЭКСГАУСТЕР А/М №4_ЭЛЕКТРОДВИГАТЕЛЬ ДСПУ-140-84-4 ЭКСГ. №4" usageType="target"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 1"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ТОК РОТОРА2"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ."/>
+			<MiningField name="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 2"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ТОК РОТОРА 1"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 4"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ДАВЛЕНИЕ МАСЛА В СИСТЕМЕ"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 1"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3. ПРОДОЛЬНАЯ."/>
+			<MiningField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4"/>
+			<MiningField name="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 2"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability(0.0)" optype="continuous" dataType="double" feature="probability" value="0.0"/>
+			<OutputField name="probability(1.0)" optype="continuous" dataType="double" feature="probability" value="1.0"/>
+			<OutputField name="probability(2.0)" optype="continuous" dataType="double" feature="probability" value="2.0"/>
+		</Output>
+		<LocalTransformations>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 1)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 1"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ТОК РОТОРА2)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ТОК РОТОРА2"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ.)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ."/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 2)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 2"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ТОК РОТОРА 1)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ТОК РОТОРА 1"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 4)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 4"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ДАВЛЕНИЕ МАСЛА В СИСТЕМЕ)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ДАВЛЕНИЕ МАСЛА В СИСТЕМЕ"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 1)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 1"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3. ПРОДОЛЬНАЯ.)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3. ПРОДОЛЬНАЯ."/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4"/>
+			</DerivedField>
+			<DerivedField name="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 2)" optype="continuous" dataType="double">
+				<FieldRef field="ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 2"/>
+			</DerivedField>
+		</LocalTransformations>
+		<Node>
+			<True/>
+			<Node>
+				<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="30.07771396636963"/>
+				<Node>
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 1)" operator="lessOrEqual" value="42.01459312438965"/>
+					<Node>
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТОК РОТОРА2)" operator="lessOrEqual" value="1.9242013692855835"/>
+						<Node>
+							<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ.)" operator="lessOrEqual" value="0.39748264849185944"/>
+							<Node score="2.0" recordCount="34635">
+								<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 2)" operator="lessOrEqual" value="25.919705390930176"/>
+								<ScoreDistribution value="0.0" recordCount="43"/>
+								<ScoreDistribution value="1.0" recordCount="0"/>
+								<ScoreDistribution value="2.0" recordCount="34592"/>
+							</Node>
+							<Node score="2.0" recordCount="13223">
+								<True/>
+								<ScoreDistribution value="0.0" recordCount="5387"/>
+								<ScoreDistribution value="1.0" recordCount="0"/>
+								<ScoreDistribution value="2.0" recordCount="7836"/>
+							</Node>
+						</Node>
+						<Node score="2.0" recordCount="12">
+							<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 2)" operator="lessOrEqual" value="25.553998947143555"/>
+							<ScoreDistribution value="0.0" recordCount="0"/>
+							<ScoreDistribution value="1.0" recordCount="0"/>
+							<ScoreDistribution value="2.0" recordCount="12"/>
+						</Node>
+						<Node score="0.0" recordCount="15851">
+							<True/>
+							<ScoreDistribution value="0.0" recordCount="15851"/>
+							<ScoreDistribution value="1.0" recordCount="0"/>
+							<ScoreDistribution value="2.0" recordCount="0"/>
+						</Node>
+					</Node>
+					<Node>
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ.)" operator="lessOrEqual" value="0.8909143209457397"/>
+						<Node score="0.0" recordCount="103782">
+							<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТОК РОТОРА 1)" operator="lessOrEqual" value="388.5626525878906"/>
+							<ScoreDistribution value="0.0" recordCount="100253"/>
+							<ScoreDistribution value="1.0" recordCount="0"/>
+							<ScoreDistribution value="2.0" recordCount="3529"/>
+						</Node>
+						<Node score="2.0" recordCount="1458">
+							<True/>
+							<ScoreDistribution value="0.0" recordCount="31"/>
+							<ScoreDistribution value="1.0" recordCount="0"/>
+							<ScoreDistribution value="2.0" recordCount="1427"/>
+						</Node>
+					</Node>
+					<Node score="0.0" recordCount="9048">
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 4)" operator="lessOrEqual" value="40.23883247375488"/>
+						<ScoreDistribution value="0.0" recordCount="8013"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="1035"/>
+					</Node>
+					<Node score="2.0" recordCount="19345">
+						<True/>
+						<ScoreDistribution value="0.0" recordCount="4645"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="14700"/>
+					</Node>
+				</Node>
+				<Node>
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ДАВЛЕНИЕ МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="124.58266830444336"/>
+					<Node score="0.0" recordCount="461349">
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="28.799985885620117"/>
+						<ScoreDistribution value="0.0" recordCount="461349"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="0"/>
+					</Node>
+					<Node score="0.0" recordCount="427">
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТОК РОТОРА2)" operator="lessOrEqual" value="247.71499633789062"/>
+						<ScoreDistribution value="0.0" recordCount="415"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="12"/>
+					</Node>
+					<Node score="0.0" recordCount="52410">
+						<True/>
+						<ScoreDistribution value="0.0" recordCount="52406"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="4"/>
+					</Node>
+				</Node>
+				<Node>
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 4)" operator="lessOrEqual" value="43.767845153808594"/>
+					<Node score="0.0" recordCount="13826">
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ДАВЛЕНИЕ МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="161.35400390625"/>
+						<ScoreDistribution value="0.0" recordCount="12931"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="895"/>
+					</Node>
+					<Node score="2.0" recordCount="1663">
+						<True/>
+						<ScoreDistribution value="0.0" recordCount="34"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="1629"/>
+					</Node>
+				</Node>
+				<Node score="0.0" recordCount="51900">
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 1)" operator="lessOrEqual" value="1.92578125"/>
+					<ScoreDistribution value="0.0" recordCount="51898"/>
+					<ScoreDistribution value="1.0" recordCount="0"/>
+					<ScoreDistribution value="2.0" recordCount="2"/>
+				</Node>
+				<Node score="0.0" recordCount="1227">
+					<True/>
+					<ScoreDistribution value="0.0" recordCount="1194"/>
+					<ScoreDistribution value="1.0" recordCount="0"/>
+					<ScoreDistribution value="2.0" recordCount="33"/>
+				</Node>
+			</Node>
+			<Node>
+				<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТОК РОТОРА 1)" operator="lessOrEqual" value="268.3735656738281"/>
+				<Node>
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3)" operator="lessOrEqual" value="0.29039929807186127"/>
+					<Node>
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 1)" operator="lessOrEqual" value="38.899845123291016"/>
+						<Node score="2.0" recordCount="4520">
+							<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 2)" operator="lessOrEqual" value="39.7520809173584"/>
+							<ScoreDistribution value="0.0" recordCount="1"/>
+							<ScoreDistribution value="1.0" recordCount="0"/>
+							<ScoreDistribution value="2.0" recordCount="4519"/>
+						</Node>
+						<Node score="0.0" recordCount="26">
+							<True/>
+							<ScoreDistribution value="0.0" recordCount="26"/>
+							<ScoreDistribution value="1.0" recordCount="0"/>
+							<ScoreDistribution value="2.0" recordCount="0"/>
+						</Node>
+					</Node>
+					<Node score="0.0" recordCount="1656">
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4. ПРОДОЛЬНАЯ.)" operator="lessOrEqual" value="0.0907118022441864"/>
+						<ScoreDistribution value="0.0" recordCount="1381"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="275"/>
+					</Node>
+					<Node score="2.0" recordCount="2920">
+						<True/>
+						<ScoreDistribution value="0.0" recordCount="970"/>
+						<ScoreDistribution value="1.0" recordCount="291"/>
+						<ScoreDistribution value="2.0" recordCount="1659"/>
+					</Node>
+				</Node>
+				<Node>
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ДАВЛЕНИЕ МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="118.1709976196289"/>
+					<Node score="0.0" recordCount="30081">
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3. ПРОДОЛЬНАЯ.)" operator="lessOrEqual" value="4.3450000286102295"/>
+						<ScoreDistribution value="0.0" recordCount="29159"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="922"/>
+					</Node>
+					<Node score="2.0" recordCount="1308">
+						<True/>
+						<ScoreDistribution value="0.0" recordCount="335"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="973"/>
+					</Node>
+				</Node>
+				<Node score="0.0" recordCount="15344">
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="37.746992111206055"/>
+					<ScoreDistribution value="0.0" recordCount="14848"/>
+					<ScoreDistribution value="1.0" recordCount="3"/>
+					<ScoreDistribution value="2.0" recordCount="493"/>
+				</Node>
+				<Node score="0.0" recordCount="428342">
+					<True/>
+					<ScoreDistribution value="0.0" recordCount="428248"/>
+					<ScoreDistribution value="1.0" recordCount="0"/>
+					<ScoreDistribution value="2.0" recordCount="94"/>
+				</Node>
+			</Node>
+			<Node>
+				<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА ПОДШИПНИКА НА ОПОРЕ 2)" operator="lessOrEqual" value="49.42643356323242"/>
+				<Node>
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 3. ПРОДОЛЬНАЯ.)" operator="lessOrEqual" value="2.410300850868225"/>
+					<Node score="2.0" recordCount="254112">
+						<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="34.88473701477051"/>
+						<ScoreDistribution value="0.0" recordCount="45390"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="208722"/>
+					</Node>
+					<Node score="2.0" recordCount="980068">
+						<True/>
+						<ScoreDistribution value="0.0" recordCount="4812"/>
+						<ScoreDistribution value="1.0" recordCount="0"/>
+						<ScoreDistribution value="2.0" recordCount="975256"/>
+					</Node>
+				</Node>
+				<Node score="0.0" recordCount="561425">
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 4)" operator="lessOrEqual" value="2.4700260162353516"/>
+					<ScoreDistribution value="0.0" recordCount="410471"/>
+					<ScoreDistribution value="1.0" recordCount="11"/>
+					<ScoreDistribution value="2.0" recordCount="150943"/>
+				</Node>
+				<Node score="2.0" recordCount="620937">
+					<True/>
+					<ScoreDistribution value="0.0" recordCount="40445"/>
+					<ScoreDistribution value="1.0" recordCount="38"/>
+					<ScoreDistribution value="2.0" recordCount="580454"/>
+				</Node>
+			</Node>
+			<Node>
+				<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="42.228492736816406"/>
+				<Node score="0.0" recordCount="449179">
+					<SimplePredicate field="double(ЭКСГАУСТЕР 4. ВИБРАЦИЯ НА ОПОРЕ 2)" operator="lessOrEqual" value="0.9402488470077515"/>
+					<ScoreDistribution value="0.0" recordCount="446599"/>
+					<ScoreDistribution value="1.0" recordCount="0"/>
+					<ScoreDistribution value="2.0" recordCount="2580"/>
+				</Node>
+				<Node score="0.0" recordCount="398839">
+					<True/>
+					<ScoreDistribution value="0.0" recordCount="337527"/>
+					<ScoreDistribution value="1.0" recordCount="0"/>
+					<ScoreDistribution value="2.0" recordCount="61312"/>
+				</Node>
+			</Node>
+			<Node score="2.0" recordCount="211609">
+				<SimplePredicate field="double(ЭКСГАУСТЕР 4. ТЕМПЕРАТУРА МАСЛА В СИСТЕМЕ)" operator="lessOrEqual" value="45.47150230407715"/>
+				<ScoreDistribution value="0.0" recordCount="72957"/>
+				<ScoreDistribution value="1.0" recordCount="0"/>
+				<ScoreDistribution value="2.0" recordCount="138652"/>
+			</Node>
+			<Node score="2.0" recordCount="273776">
+				<True/>
+				<ScoreDistribution value="0.0" recordCount="10428"/>
+				<ScoreDistribution value="1.0" recordCount="0"/>
+				<ScoreDistribution value="2.0" recordCount="263348"/>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>
